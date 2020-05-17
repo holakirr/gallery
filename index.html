@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.min.css">
+    <script type="text/javascript" src="mustache.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Markup for Gallery -->
+    <div id="gallery">
+    </div>
+    <!-- End of markup -->
+
+    <script src="/index.js"></script>
+    <script>
+        const photos = [{
+                id: '0',
+                src: 'https://up.enterdesk.com/edpic_source/a2/7a/95/a27a957696c16e93f6a75540abef0a8b.jpg',
+            },
+            {
+                id: '1',
+                src: 'https://img3.akspic.ru/image/128693-derevo-nebo-osennyaya_okraska_listev-osen-peyzash-2560x1600.jpg',
+            },
+            {
+                id: '2',
+                src: 'https://avatanplus.com/files/resources/original/592d3e2b66b4e15c58bad99d.jpg',
+            },
+            {
+                id: '3',
+                src: 'https://youwishyouwerehere.files.wordpress.com/2010/09/4449325822_082ef6ec90_o.jpg',
+            },
+            {
+                id: '4',
+                src: 'https://www.castaways.co.uk/wp-content/uploads/sites/3/2018/04/Highlights-of-Provence-France.jpg',
+            },
+        ]
+        document.addEventListener('DOMContentLoaded', function () {
+            const gallery = new Gallery({
+                photos, // массив фотографий
+                size: 5, //  кол-во видимых фотографий
+                current: '2', // id текущей фотографии
+                container: document.querySelector('#gallery') // контейнер для встраивания галереи
+            });
+        });
+    </script>
+
+</body>
+
+</html>
